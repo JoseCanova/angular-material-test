@@ -9,6 +9,8 @@ import {MatCardComponent} from './mat-card/mat-card.component';
 import {MatCheckboxComponent} from './mat-checkbox/mat-checkbox.component'
 import {NavBar1Component} from './nav-bar1/nav-bar1.component';
 import { BootInputComponent } from './boot-input/boot-input.component';
+import {BootModalComponent} from './boot-modal/boot-modal.component';
+import {NavigationTopComponent} from './navigation-top/navigation-top.component';
 
 const routes: Routes = [
 	 { path: 'bootstrap', component: BootstrapTestComponent },
@@ -19,7 +21,9 @@ const routes: Routes = [
 	 { path: 'card' , component:MatCardComponent},
 	 { path: 'mat-checkbox' , component: MatCheckboxComponent},
 	 { path: 'nav-bar1' , component: NavBar1Component}, 
- 	 {path: 'boot-input' , component:BootInputComponent}
+ 	 {path: 'boot-input' , component:BootInputComponent},
+	 {path: 'boot-modal' , component:BootModalComponent}, 
+	 {path: 'nav-top' , component:NavigationTopComponent}
 ];
 
 @NgModule({

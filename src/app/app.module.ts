@@ -18,6 +18,8 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import { MatCheckboxComponent } from './mat-checkbox/mat-checkbox.component';
 import { NavBar1Component } from './nav-bar1/nav-bar1.component';
 import { BootInputComponent } from './boot-input/boot-input.component';
+import { BootModalComponent } from './boot-modal/boot-modal.component';
+import { NavigationTopComponent } from './navigation-top/navigation-top.component';
 
 
 @NgModule({
@@ -31,7 +33,9 @@ import { BootInputComponent } from './boot-input/boot-input.component';
     MatCardComponent,
     MatCheckboxComponent,
     NavBar1Component,
-    BootInputComponent
+    BootInputComponent,
+    BootModalComponent,
+    NavigationTopComponent
   ],
   imports: [
     BrowserModule,

@@ -41,5 +41,11 @@
       <app-boot-input></app-boot-input>
       </ng-template>
   </li>
+  	<li [ngbNavItem]="8">
+    <a ngbNavLink >Boot Modal</a>
+      <ng-template ngbNavContent>
+      	<app-boot-modal></app-boot-modal>
+      </ng-template>
+  </li>
 </ul>
 <div [ngbNavOutlet]="nav" class="mt-2"></div>
