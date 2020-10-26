@@ -1,0 +1,175 @@
+<p>
+  By design, dropdowns are always positioned dynamically via
+  <a routerLink="/positioning" fragment="dropdown">placement</a>
+  except when used inside navbar elements. To gracefully display them properly on small screens, they are
+  rendered in the html as block elements.
+</p>
+<p>
+  In order to align a dropdown in a navbar to the right while still keeping correct behavior when the navbar is
+  collapsed, the CSS class <code>dropdown-menu-right</code> must be added to the dropdown menu.
+  The second dropdown in this example illustrates it.
+</p>
+<p>
+  If completely custom placement of a dropdown in a navbar is needed, then it is only possible if the
+  <code>display</code> property is explicitlyset to "dynamic".
+  The third dropdown in this example illustrates this.
+</p>
+<p>
+  Beware however that this breaks the positioning of the dropdown when the navbar is
+  expanded on small displays. You can see the difference between the behavior of the first dropdowns
+  (with a static display) and the last one (with a dynamic display) if you use this demo on a small resolution.
+</p>
+<p>
+  To have dynamic positioning along with correct behavior on smaller displays, the value of the <code>display</code>
+  property should be dynamically set based on the screen resolution. This is left as an exercise to the reader.
+</p>
+
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+  <span class="navbar-brand">Dropdowns in navbar</span>
+  <button class="navbar-toggler" type="button" aria-controls="navbarContent" [attr.aria-expanded]="!collapsed" aria-label="Toggle navigation" (click)="collapsed = !collapsed">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="navbar-collapse" [class.collapse]="collapsed" id="navbarContent">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+		  <mat-icon>more_vert</mat-icon>
+		</button>
+		<mat-menu #menu="matMenu">
+		  <button mat-menu-item>
+		    <mat-icon>dialpad</mat-icon>
+		    <span>Redial</span>
+		  </button>
+		  <button mat-menu-item disabled>
+		    <mat-icon>voicemail</mat-icon>
+		    <span>Check voice mail</span>
+		  </button>
+		  <button mat-menu-item>
+		    <mat-icon>notifications_off</mat-icon>
+		    <span>Disable alerts</span>
+		  </button>
+		</mat-menu>
+      </li>	
+      <li class="nav-item">
+      <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+		<mat-menu #menu="matMenu">
+		  <button mat-menu-item class="btn btn-light">Item 1</button>
+		  <button mat-menu-item class="btn btn-light">Item 2</button>
+		  <div class="input-group mb-3">
+		  <div class="input-group-prepend">
+		    <span class="input-group-text" id="basic-addon1">@</span>
+		  </div>
+		  <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+		</div>
+		</mat-menu>
+      </li>
+      <li class="nav-item" ngbDropdown>
+        <a class="nav-link" tabindex="0" ngbDropdownToggle id="navbarDropdown1" role="button">
+          Static
+        </a>
+        <div ngbDropdownMenu aria-labelledby="navbarDropdown1" class="dropdown-menu">
+          <a ngbDropdownItem href="#" (click)="$event.preventDefault()">Action</a>
+          <a ngbDropdownItem href="#" (click)="$event.preventDefault()">Another action</a>
+          <a ngbDropdownItem href="#" (click)="$event.preventDefault()">Something else here</a>
+        </div>
+      </li>
+
+      <li class="nav-item" ngbDropdown>
+        <a class="nav-link" tabindex="0" ngbDropdownToggle id="navbarDropdown2" role="button">
+          Static right
+        </a>
+        <div ngbDropdownMenu aria-labelledby="navbarDropdown2" class="dropdown-menu dropdown-menu-right">
+          <a ngbDropdownItem href="#" (click)="$event.preventDefault()">Action</a>
+          <a ngbDropdownItem href="#" (click)="$event.preventDefault()">Another action</a>
+          <a ngbDropdownItem href="#" (click)="$event.preventDefault()">Something else here</a>
+        </div>
+      </li>
+
+      <li class="nav-item" ngbDropdown display="dynamic" placement="bottom-right">
+        <a class="nav-link" tabindex="0" ngbDropdownToggle id="navbarDropdown3" role="button">
+          Dynamic
+        </a>
+        <div ngbDropdownMenu aria-labelledby="navbarDropdown3" class="dropdown-menu">
+          <a ngbDropdownItem href="#" (click)="$event.preventDefault()">Action</a>
+          <a ngbDropdownItem href="#" (click)="$event.preventDefault()">Another action</a>
+          <a ngbDropdownItem href="#" (click)="$event.preventDefault()">Something else here</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+<nav class="navbar navbar-dark bg-dark">
+  <span class="navbar-brand">Dropdowns in navbar</span>
+</nav>
+
+<nav class="navbar navbar-dark bg-primary">
+  <span class="navbar-brand">Dropdowns in navbar</span>
+</nav>
+
+<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+  <span class="navbar-brand">Dropdowns in navbar</span>
+</nav>
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item active" aria-current="page">Home</li>
+  </ol>
+</nav>
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Library</li>
+  </ol>
+</nav>
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#">Home</a></li>
+    <li class="breadcrumb-item"><a href="#">Library</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Data</li>
+  </ol>
+</nav>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      1 of 2
+    </div>
+    <div class="col">
+      2 of 2
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      1 of 3
+    </div>
+    <div class="col">
+      2 of 3
+    </div>
+    <div class="col">
+      3 of 3
+    </div>
+  </div>
+</div><div class="container">
+  <div class="row">
+    <div class="col">
+      1 of 2
+    </div>
+    <div class="col">
+      2 of 2
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      1 of 3
+    </div>
+    <div class="col">
+      2 of 3
+    </div>
+    <div class="col">
+      3 of 3
+    </div>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+.example-card {
+  max-width: 400px;
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+/* .cardList {
+    display: flex;
+    flex-direction: column;
+  }
+  Row Gap
+.cardList > *:not(:last-child) {
+    margin-bottom: 32px;
+  } */
+  
+   .cardList {
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   justify-content: flex-start;
+ }
+ /* Column Gap */
+ .cardList > * {
+   box-sizing: border-box;
+ }
+ .cardList > *:not(:last-child) {
+   margin-right: 32px;
+ }
+ /* Item sizing */
+ .cardListItem {
+   flex: 0 1 calc(33.3% - 32px);
+ }

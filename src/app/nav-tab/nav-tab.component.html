@@ -1,0 +1,45 @@
+<ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+  <li [ngbNavItem]="1">
+    	<a ngbNavLink>bootstrap</a>
+      <ng-template ngbNavContent>
+      	<app-bootstrap-test></app-bootstrap-test>
+      </ng-template>
+  </li>
+  <li [ngbNavItem]="2">
+    <a ngbNavLink>Material</a>
+    <ng-template ngbNavContent>
+      	<app-mat-input-text></app-mat-input-text>
+      </ng-template>
+  </li>
+  <li [ngbNavItem]="3">
+    <a ngbNavLink >ButtonToggle</a>
+      <ng-template ngbNavContent>
+      	<app-mat-button-toggle></app-mat-button-toggle>
+      </ng-template>
+  </li>
+   <li [ngbNavItem]="4">
+    <a ngbNavLink >Alerts</a>
+      <ng-template ngbNavContent>
+      <app-alert></app-alert>
+      </ng-template>
+  </li>
+     <li [ngbNavItem]="5">
+    <a ngbNavLink >Cards</a>
+      <ng-template ngbNavContent>
+      <app-mat-card></app-mat-card>
+      </ng-template>
+  </li>
+	<li [ngbNavItem]="6">
+    <a ngbNavLink >NAv Bar</a>
+      <ng-template ngbNavContent>
+      <app-nav-bar1></app-nav-bar1>
+      </ng-template>
+  </li>
+	<li [ngbNavItem]="7">
+    <a ngbNavLink >Input BootStrap</a>
+      <ng-template ngbNavContent>
+      <app-boot-input></app-boot-input>
+      </ng-template>
+  </li>
+</ul>
+<div [ngbNavOutlet]="nav" class="mt-2"></div>
